@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
-  QWERTY:
+  BASE:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Q
   - W
@@ -30,7 +30,7 @@ layers:
   - {t: '''', h: RGUI, s: '"'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Z, h: '7'}
+  - {t: Z, h: BUTTON}
   - {t: X, h: '$$mdi:apple-keyboard-option$$'}
   - C
   - V
@@ -41,15 +41,15 @@ layers:
   - M
   - {t: ',', s: <}
   - {t: ., h: '$$mdi:apple-keyboard-option$$', s: '>'}
-  - {t: /, h: '7', s: '?'}
+  - {t: /, h: BUTTON, s: '?'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:keyboard-esc$$', h: Fn}
-  - {t: '$$mdi:keyboard-space$$', h: NUMBER}
-  - {t: '$$mdi:keyboard-tab$$', h: SYMBOL}
-  - {t: '$$mdi:keyboard-return$$', h: '5'}
-  - {t: '$$mdi:backspace$$', h: '4'}
-  - {t: '$$mdi:backspace-reverse-outline$$', h: '6'}
-  SYMBOL:
+  - {t: '$$mdi:keyboard-esc$$', h: MEDIA}
+  - {t: '$$mdi:keyboard-space$$', h: MOUSE}
+  - {t: '$$mdi:keyboard-tab$$', h: NAV}
+  - {t: '$$mdi:keyboard-return$$', h: SYM}
+  - {t: '$$mdi:backspace$$', h: NUM}
+  - {t: '$$mdi:backspace-reverse-outline$$', h: FUN}
+  NAV:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -98,7 +98,7 @@ layers:
   - $$mdi:mouse-right-click-outline$$
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
-  NUMBER:
+  MOUSE:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -147,7 +147,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:backspace-reverse-outline$$
-  Fn:
+  MEDIA:
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB BRD
   - RGB SAD
@@ -196,7 +196,7 @@ layers:
   - STOP
   - PLAY PAUSE
   - $$mdi:volume-off$$
-  '4':
+  NUM:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '[', s: '{'}
   - '7'
@@ -245,7 +245,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  '5':
+  SYM:
   - {t: '$$mdi:transfer$$', type: trans}
   - '{'
   - '&'
@@ -294,7 +294,7 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  '6':
+  FUN:
   - {t: '$$mdi:transfer$$', type: trans}
   - F12
   - F7
@@ -343,7 +343,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  '7':
+  BUTTON:
   - {t: '$$mdi:transfer$$', type: trans}
   - UNDO
   - Sft+$$mdi:backspace-reverse-outline$$
