@@ -55,8 +55,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "QWERTY";
+        base {
+            display-name = "BASE";
             bindings = <
 &none  &kp Q       &kp W       &kp E        &kp R         &kp T                         &kp UP                &kp Y        &kp U            &kp I        &kp O         &kp P                  &none
 &none  &mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G               &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt RSHIFT J     &mt RCTRL K  &mt LALT L    &mt RGUI SINGLE_QUOTE  &none
@@ -68,7 +68,7 @@
         };
 
         raise_layer {
-            display-name = "SYMBOL";
+            display-name = "NAV";
             bindings = <
 &trans  &trans    &trans         &trans     &trans     &trans                            &mmv MOVE_UP                     &kp K_REDO  &kp LS(INS)     &kp LC(INS)     &kp LS(DEL)   &kp K_UNDO       &trans
 &trans  &kp LGUI  &kp LALT       &kp LCTRL  &kp LSHFT  &trans            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
@@ -80,7 +80,7 @@
         };
 
         lower_layer {
-            display-name = "NUMBER";
+            display-name = "MOUSE";
             bindings = <
 &trans  &trans    &trans    &trans     &trans     &trans                            &mmv MOVE_UP                     &kp K_REDO  &kp LS(INS)    &kp LC(INS)  &kp LS(DEL)  &kp K_UNDO  &trans
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &caps_word  &kp LEFT       &kp DOWN     &kp UP       &kp RIGHT   &trans
@@ -91,8 +91,8 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_3 {
-            display-name = "Fn";
+        MEDIA {
+            display-name = "MEDIA";
             bindings = <
 &trans  &rgb_ug RGB_BRD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &bl BL_TOG                              &mmv MOVE_UP                     &rgb_ug RGB_TOG    &rgb_ug RGB_EFF   &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &trans
 &trans  &kp LGUI         &kp LALT         &kp LCTRL        &kp LSHIFT       &bl BL_CYCLE            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &ext_power EP_TOG  &kp C_PREV        &kp C_VOL_DN     &kp C_VOL_UP     &kp C_NEXT       &trans
@@ -103,40 +103,48 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_4 {
+        NUM {
             bindings = <
 &trans  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET                            &mmv MOVE_UP                     &trans  &trans     &trans     &trans    &trans    &trans
 &trans  &kp SEMI          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &trans
 &trans  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH      &trans                    &mmv MOVE_DOWN                   &trans  &trans     &trans     &kp RALT  &trans    &trans
                                         &kp DOT       &kp NUMBER_0  &kp MINUS                                                                     &trans  &trans     &trans
             >;
+
+            label = "NUM";
         };
 
-        layer_5 {
+        SYM {
             bindings = <
 &trans  &kp LEFT_BRACE  &kp AMPERSAND  &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE                            &mmv MOVE_UP                     &trans  &trans     &trans     &trans    &trans    &trans
 &trans  &kp COLON       &kp DOLLAR     &kp PERCENT           &kp CARET              &kp PLUS                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &trans
 &trans  &kp TILDE       &kp EXCL       &kp AT                &kp HASH               &kp PIPE         &trans                    &mmv MOVE_DOWN                   &trans  &trans     &trans     &kp RALT  &trans    &trans
                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER                                                                   &trans  &trans     &trans
             >;
+
+            label = "SYM";
         };
 
-        layer_6 {
+        FUN {
             bindings = <
 &trans  &kp F12  &kp F7  &kp F8             &kp F9     &kp PRINTSCREEN                            &mmv MOVE_UP                     &trans  &trans     &trans     &trans    &trans    &trans
 &trans  &kp F11  &kp F4  &kp F5             &kp F6     &kp SCROLLLOCK             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &trans
 &trans  &kp F10  &kp F1  &kp F2             &kp F3     &kp PAUSE_BREAK  &trans                    &mmv MOVE_DOWN                   &trans  &trans     &trans     &kp RALT  &trans    &trans
                          &kp K_APPLICATION  &kp SPACE  &kp TAB                                                                     &trans  &trans     &trans
             >;
+
+            label = "FUN";
         };
 
-        layer_7 {
+        BUTTON {
             bindings = <
 &trans  &kp K_UNDO  &kp LS(DEL)  &kp LC(INS)  &kp LS(INS)     &kp K_REDO                             &mmv MOVE_UP                     &kp K_REDO   &kp LS(INS)     &kp LC(INS)  &kp LS(DEL)  &kp K_UNDO  &trans
 &trans  &kp LGUI    &kp LALT     &kp LCTRL    &kp LSHFT       &trans                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans       &kp RSHFT       &kp RCTRL    &kp LALT     &kp RGUI    &trans
 &trans  &trans      &kp RALT     &sys_reset   &studio_unlock  &bootloader  &trans                    &mmv MOVE_DOWN                   &bootloader  &studio_unlock  &sys_reset   &kp RALT     &trans      &trans
                                  &mkp MCLK    &mkp LCLK       &mkp RCLK                                                               &mkp RCLK    &mkp LCLK       &mkp MCLK
             >;
+
+            label = "BUTTON";
         };
     };
 };
